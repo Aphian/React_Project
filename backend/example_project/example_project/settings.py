@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # 3rd
     'rest_framework',
 
+    'example_app',
+
     
 ]
 
