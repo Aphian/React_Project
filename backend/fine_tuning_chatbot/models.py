@@ -10,7 +10,7 @@ class FineTunedModel(models.Model):
         ('davinci', 'Davinci'),
     ]
 
-    model_name = models.CharField(max_length=100),
+    model_name = models.CharField(max_length=100)
     base_model = models.CharField(max_length=100, choices=MODEL_CHOICES)
 
     def __str__(self):
