@@ -12,4 +12,4 @@ class FineTunedModelAdmin(admin.ModelAdmin):
 class TrainingDataAdmin(admin.ModelAdmin):
     list_display = ('prompt', 'completion', 'fine_tuned_model')
     search_fields = ('prompt', 'completion', 'fine_tuned_model', 'model_name')
-    list_filter = ('fine_tuned_model',)
+    list_filter = ('fine_tuned_model', 'is_fine_tuned', 'will_be_fine_tuned')
