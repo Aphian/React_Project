@@ -40,11 +40,19 @@ INSTALLED_APPS = [
 
     # 3rd
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
+    
 
     # dev
     'fine_tuning_chatbot',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 
 MIDDLEWARE = [
     #3rd
