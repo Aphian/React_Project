@@ -2,9 +2,9 @@
 // default 키워드 사용하는 다른 파일에 이것이 파일의 주요 기능임을 알림.
 
 // 보드 안에 숫자 넣기
-function Square() {
-  return <button className="square">1</button>;
-}
+// function Square() {
+//   return <button className="square">1</button>;
+// }
 
 // value의 값을 넣기
 // JS 로 렌더링 필요
