@@ -8,7 +8,7 @@
 
 // value의 값을 넣기
 // JS 로 렌더링 필요
-function Square({value}) {
+function Square({ value }) {
   return <button className="square">{value}</button>;
 }
 
