@@ -9,7 +9,18 @@
 // value의 값을 넣기
 // JS 로 렌더링 필요
 function Square({ value }) {
-  return <button className="square">{value}</button>;
+  function handleClick() {
+    console.log('clicked!');
+  }
+  
+  // return <button className="square">{value}</button>;
+
+  return (
+    <button className="square" onClick={handleClick}>
+      { value }
+    </button>
+
+  )
 }
 
 export default function Board() {
