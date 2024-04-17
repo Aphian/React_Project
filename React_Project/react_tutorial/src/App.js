@@ -29,7 +29,7 @@ function Square({ value , onSquareClick}) {
   )
 }
 
-export default function Board() {
+function Board({ xIsNext, squares, onPlay }) {
 
   // button 반환
   // return 뒤에 오는 모든 항목이 함수 호출자에게 값으로 반환됨
@@ -89,7 +89,7 @@ export default function Board() {
     const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i) {
-      if (squares[i]) {
+      if (squares[i] || calculateWinner(squares)) {
         return;
       }
 
@@ -100,13 +100,24 @@ export default function Board() {
         nextSquares[i] = "0";
       }
 
+      onPlay(nextSquares);
+
       // nextSquares[i] = "X";
-      setSquares(nextSquares);
-      setXIsNext(!xIsNext);
+      // setSquares(nextSquares);
+      // setXIsNext(!xIsNext);
+    }
+
+    const winner = calculateWinner(squares);
+    let status;
+    if (winner) {
+      status = "Winner: " + winner;
+    } else {
+      status  = "Next player: " (xIsNext ? "X" : "0");
     }
     // useState 함수를 사용하기 때문에 value 값 제거
     return (
       <>
+        <div className="status">{status}</div>
         <div className="board-row">
           <Square value={squares[0]} onSquareClick={() => handleClick(0)}/>
           <Square value={squares[1]} onSquareClick={() => handleClick(1)}/>
@@ -125,6 +136,28 @@ export default function Board() {
       </>
   )
 
+}
+
+export default function Game() {
+  const [xIsNext, setXIsNext] = useState(true);
+  const [history, setHistory] = useState([Array(9).fill(null)]);
+  const currentSquares = history[history.length - 1];
+
+  function handlePlay(nextSquares) {
+    setHistory([...history, nextSquares]);
+    setXIsNext(!xIsNext);
+  }
+
+  return (
+    <div className="game">
+      <div className="game-board">
+        <Board xIsNext={xIsNext} squares={currentSquares} onPlay={handlePlay} />
+      </div>
+      <div className="game-info">
+        <ol>{/*TODO*/}</ol>
+      </div>
+    </div>
+  )
 }
 
 function calculateWinner(squares) {
