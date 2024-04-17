@@ -1,15 +1,15 @@
 // export 키워드 사용으로 이 파일 외부에서 이 기능에 엑세스를 허용.
 // default 키워드 사용하는 다른 파일에 이것이 파일의 주요 기능임을 알림.
 
-
+// 구성요소 변화 기억을 위한 `상태` 사용
+// useState : 컴포넌트에서 호출하여 항목을 `기억`할 수 있는 특수 함수
+import { useState } from 'react'
 // 보드 안에 숫자 넣기
 // function Square() {
   //   return <button className="square">1</button>;
   // }
   
 // value의 값을 넣기
-import { useState } from 'react'
-
 // JS 로 렌더링 필요
 function Square({ value }) {
   const [value, setValue] = useState(null);
@@ -65,24 +65,43 @@ export default function Board() {
   //   </>
   // ) ;
 
-  return (
-    <>
-      <div className="board-row">
-        <Square value="1"/>
-        <Square value="2"/>
-        <Square value="3"/>
-      </div>
-      <div className="board-row">
-        <Square value="4"/>
-        <Square value="5"/>
-        <Square value="6"/>
-      </div>
-      <div className="board-row">
-        <Square value="7"/>
-        <Square value="8"/>
-        <Square value="9"/>
-      </div>
-    </>
+  // return (
+  //   <>
+  //     <div className="board-row">
+  //       <Square value="1"/>
+  //       <Square value="2"/>
+  //       <Square value="3"/>
+  //     </div>
+  //     <div className="board-row">
+  //       <Square value="4"/>
+  //       <Square value="5"/>
+  //       <Square value="6"/>
+  //     </div>
+  //     <div className="board-row">
+  //       <Square value="7"/>
+  //       <Square value="8"/>
+  //       <Square value="9"/>
+  //     </div>
+  //   </>
+    // useState 함수를 사용하기 때문에 value 값 제거
+    return (
+      <>
+        <div className="board-row">
+          <Square />
+          <Square />
+          <Square />
+        </div>
+        <div className="board-row">
+          <Square />
+          <Square />
+          <Square />
+        </div>
+        <div className="board-row">
+          <Square />
+          <Square />
+          <Square />
+        </div>
+      </>
   )
 
 }
