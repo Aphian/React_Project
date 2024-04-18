@@ -11,7 +11,7 @@ import { useState } from 'react'
   
 // value의 값을 넣기
 // JS 로 렌더링 필요
-function Square({ value , onSquareClick}) {
+function Square({ value , onSquareClick }) {
   // const [value, setValue] = useState(null);
   // function handleClick() {
   //   // console.log('clicked!');
@@ -85,8 +85,8 @@ function Board({ xIsNext, squares, onPlay }) {
   //       <Square value="9"/>
   //     </div>
   //   </>
-    const [xIsNext, setXIsNext] = useState(true);
-    const [squares, setSquares] = useState(Array(9).fill(null));
+    // const [xIsNext, setXIsNext] = useState(true);
+    // const [squares, setSquares] = useState(Array(9).fill(null));
 
     function handleClick(i) {
       if (squares[i] || calculateWinner(squares)) {
