@@ -97,7 +97,7 @@ function Board({ xIsNext, squares, onPlay }) {
       if (xIsNext) {
         nextSquares[i] = "X";
       } else {
-        nextSquares[i] = "0";
+        nextSquares[i] = "O";
       }
 
       onPlay(nextSquares);
@@ -112,7 +112,7 @@ function Board({ xIsNext, squares, onPlay }) {
     if (winner) {
       status = "Winner: " + winner;
     } else {
-      status  = "Next player: " (xIsNext ? "X" : "0");
+      status  = "Next player: " + (xIsNext ? "X" : "O");
     }
     // useState 함수를 사용하기 때문에 value 값 제거
     return (
