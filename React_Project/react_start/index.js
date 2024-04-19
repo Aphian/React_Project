@@ -1,5 +1,4 @@
-import {createRoot} from 'react-dom/client'
-
+import { createRoot } from 'react-dom/client'
 // document.body.innerHTML = '<div id="app"></div>';
 function NavigationBar() {
     return <h1>Hello World</h1>;
